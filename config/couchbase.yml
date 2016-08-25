@@ -1,0 +1,23 @@
+common: &common
+  hostname: 172.17.0.3
+  port: 8091
+  username:
+  password:
+  pool: default
+
+development:
+  <<: *common
+  bucket: dm_file_manager_proto_development
+
+test:
+  <<: *common
+  bucket: dm_file_manager_proto_test
+
+# set these environment variables on your production server
+production:
+  hostname: <%= ENV['COUCHBASE_HOST'] %>
+  port: <%= ENV['COUCHBASE_PORT'] %>
+  username: <%= ENV['COUCHBASE_USERNAME'] %>
+  password: <%= ENV['COUCHBASE_PASSWORD'] %>
+  pool: <%= ENV['COUCHBASE_POOL'] %>
+  bucket: <%= ENV['COUCHBASE_BUCKET'] %>
