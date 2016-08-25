@@ -1,4 +1,8 @@
 DMFileManagerProto::Application.routes.draw do
+  resources :people, except: [:show]
+
+  root to: "people#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

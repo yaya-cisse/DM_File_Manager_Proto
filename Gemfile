@@ -8,6 +8,13 @@ gem 'rails', '3.2.22.1'
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 
+gem 'test-unit', '~> 3.0'
+gem 'ruby-prof'
+
+
+gem 'mongoid'
+gem 'bson_ext'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
