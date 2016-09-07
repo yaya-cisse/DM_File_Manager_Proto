@@ -1,7 +1,3 @@
-class Person
-  include Mongoid::Document
-  field :first_name, type: String
-  field :last_name, type: String
-  field :email, type: String
-  field :notes, type: String
+class Person < ActiveRecord::Base
+   attr_accessible :first_name, :last_name, :image, :file
 end
