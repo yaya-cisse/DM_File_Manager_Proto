@@ -5,4 +5,6 @@ class Person < Couchbase::Model
   attribute :last_name
   attribute :email
   attribute :notes
+  attribute :image
+  attribute :file
 end
