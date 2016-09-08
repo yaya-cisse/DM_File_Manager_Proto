@@ -22,7 +22,27 @@ def insert_without_files
   end
 end
 
+def get_all_records
+  persons = Person.all
+end
+
+def get_records_without_files
+  persons = Person.where(:image => nil, :file => nil)
+end
+
+def get_records_with_images
+  persons = Person.where('image != ?', nil)
+end
+
+def get_records_with_files
+  persons = Person.where('file != ?', nil)
+end
+
 puts base = Benchmark.measure { insert_with_two_files }
 puts base = Benchmark.measure { insert_with_large_files }
 puts base = Benchmark.measure { insert_with_small_files }
 puts base = Benchmark.measure { insert_with_small_files }
+puts base = Benchmark.measure { get_all_records }
+puts base = Benchmark.measure { get_records_without_files }
+puts base = Benchmark.measure { get_records_with_images }
+puts base = Benchmark.measure { get_records_with_files }
