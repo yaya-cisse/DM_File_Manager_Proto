@@ -7,11 +7,11 @@ common: &common
 
 development:
   <<: *common
-  bucket: dm_file_manager_proto_development
+  bucket: proto_database
 
 test:
   <<: *common
-  bucket: dm_file_manager_proto_test
+  bucket: proto_database_test
 
 # set these environment variables on your production server
 production:
