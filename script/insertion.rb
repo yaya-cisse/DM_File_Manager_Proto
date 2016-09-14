@@ -12,7 +12,7 @@ def insert_with_large_files
 end
 
 def insert_with_small_files
-  4600.times do |i|
+  4500.times do |i|
     Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :image => File.binread("#{Rails.root}/public/image.png"))
   end
 end
