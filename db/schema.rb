@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160907152225) do
+ActiveRecord::Schema.define(:version => 20160914140606) do
 
   create_table "people", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.binary   "image"
-    t.binary   "file"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.binary   "file",       :limit => 2147483647
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
 end
