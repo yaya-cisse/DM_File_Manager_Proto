@@ -61,7 +61,7 @@ module DMFileManagerProto
     config.assets.version = '1.0'
 
     config.generators do |g|
-
+        g.orm :active_record
     end
 
   end
