@@ -1,19 +1,19 @@
 
-def insert_with_two_files
+def insert_with_large_and_medium_files
   400.times do |i|
     Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :image => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/image.png")), :file => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/file.pdf"))
   end
 end
 
-def insert_with_large_files
+def insert_with_large_and_small_files
   100.times do |i|
-    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :file => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/file.pdf")))
+    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :image => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/slack.png")), :file => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/file.pdf")))
   end
 end
 
-def insert_with_small_files
+def insert_with_small_and_medium_files
   4600.times do |i|
-    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :image => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/image.png")))
+    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :image => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/image.png")), :file => Moped::BSON::Binary.new(:generic,File.binread("#{Rails.root}/public/slack.png")))
   end
 end
 
@@ -39,10 +39,10 @@ def get_records_with_files
   persons = Person.where('file != ?', nil)
 end
 
-puts base = Benchmark.measure { insert_with_two_files }
-puts base = Benchmark.measure { insert_with_large_files }
-puts base = Benchmark.measure { insert_with_small_files }
-puts base = Benchmark.measure { insert_with_small_files }
+puts base = Benchmark.measure { insert_with_large_and_medium_files }
+puts base = Benchmark.measure { insert_with_large_and_small_files }
+puts base = Benchmark.measure { insert_with_small_and_medium_files }
+puts base = Benchmark.measure { insert_without_files }
 puts base = Benchmark.measure { get_all_records }
 puts base = Benchmark.measure { get_records_without_files }
 puts base = Benchmark.measure { get_records_with_images }
