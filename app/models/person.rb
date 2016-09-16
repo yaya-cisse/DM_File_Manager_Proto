@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
    attr_accessible :first_name, :last_name, :image, :file
-   after_save :image, :file
+   before_create :image, :file
 
   def image
     Image.find_by(parent: self.first_name)
