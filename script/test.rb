@@ -6,7 +6,7 @@ def retrieve_all
   Person.all
 end
 
-def retrieve_a_document
+def retrieve_a_file
   Person.first.image
 end
-puts base = Benchmark.measure { retrieve_all }
+puts base = Benchmark.measure { retrieve_a_file }
