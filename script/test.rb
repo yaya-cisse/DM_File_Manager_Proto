@@ -9,4 +9,5 @@ end
 def retrieve_a_file
   Person.first.image
 end
-puts base = Benchmark.measure { retrieve_a_file }
+
+File.write("#{Rails.root}/public/result.txt", base = Benchmark.measure { insert })
