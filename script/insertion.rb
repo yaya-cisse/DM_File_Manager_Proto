@@ -52,3 +52,17 @@ puts base = Benchmark.measure { get_records_without_files }
 puts base = Benchmark.measure { get_records_with_images }
 puts base = Benchmark.measure { get_records_with_files }
 puts base = Benchmark.measure { destroy_all }
+
+File.open("#{Rails.root}/public/result.txt", 'w') do |file|
+  file.write("  userCPU    systemCPU   total    elapsedRealTime")
+  file.write(base = Benchmark.measure { insert_with_large_and_medium_files })
+  file.write(base = Benchmark.measure { insert_with_large_and_small_files })
+  file.write(base = Benchmark.measure { insert_with_small_and_medium_files })
+  file.write(base = Benchmark.measure { insert_without_files })
+  file.write(base = Benchmark.measure { get_all_records })
+  file.write(base = Benchmark.measure { get_records_without_files })
+  file.write(base = Benchmark.measure { get_records_with_images })
+  file.write(base = Benchmark.measure { get_records_with_files })
+  file.write(base = Benchmark.measure { destroy_all })
+  file.close
+end
