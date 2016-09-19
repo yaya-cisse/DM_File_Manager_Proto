@@ -9,4 +9,11 @@ end
 def retrieve_a_file
   Person.first.image
 end
-puts base = Benchmark.measure { retrieve_a_file }
+
+# File.write("#{Rails.root}/public/result.txt", "userCPU   systemCPU   total    elapsedRealTime")
+File.open("#{Rails.root}/public/result.txt", 'w') do |file|
+  file.write("  userCPU    systemCPU   total    elapsedRealTime")
+  file.write(base = Benchmark.measure { insert })
+  file.write(base = Benchmark.measure { retrieve_all })
+  file.close
+end
