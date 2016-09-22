@@ -43,15 +43,15 @@ def destroy_all
   Person.destroy_all
 end
 
-puts base = Benchmark.measure { insert_with_large_and_medium_files }
-puts base = Benchmark.measure { insert_with_large_and_small_files }
-puts base = Benchmark.measure { insert_with_small_and_medium_files }
-puts base = Benchmark.measure { insert_without_files }
-puts base = Benchmark.measure { get_all_records }
-puts base = Benchmark.measure { get_records_without_files }
-puts base = Benchmark.measure { get_records_with_images }
-puts base = Benchmark.measure { get_records_with_files }
-puts base = Benchmark.measure { destroy_all }
+# puts base = Benchmark.measure { insert_with_large_and_medium_files }
+# puts base = Benchmark.measure { insert_with_large_and_small_files }
+# puts base = Benchmark.measure { insert_with_small_and_medium_files }
+# puts base = Benchmark.measure { insert_without_files }
+# puts base = Benchmark.measure { get_all_records }
+# puts base = Benchmark.measure { get_records_without_files }
+# puts base = Benchmark.measure { get_records_with_images }
+# puts base = Benchmark.measure { get_records_with_files }
+# puts base = Benchmark.measure { destroy_all }
 
 File.open("#{Rails.root}/public/result.txt", 'w') do |file|
   file.write("  userCPU    systemCPU   total    elapsedRealTime")
