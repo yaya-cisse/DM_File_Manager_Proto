@@ -1,6 +1,6 @@
 def insert
   10.times do
-    Person.create( :first_name => "first_name" , :last_name => "last_name", :file => File.binread("#{Rails.root}/public/slack.png"))
+    Person.create( :first_name => "first_name" , :last_name => "last_name", :file_type => "small", :file => File.binread("#{Rails.root}/public/slack.png"))
   end
 end
 
@@ -9,13 +9,12 @@ def retrieve_all
 end
 
 def retrieve_a_file
-  Person.first.image
+  Person.first.file
 end
 
 
 def destroy_all
   Person.destroy_all
-  Fichier.destroy_all
 end
 
 # File.write("#{Rails.root}/public/result.txt", "userCPU   systemCPU   total    elapsedRealTime")
