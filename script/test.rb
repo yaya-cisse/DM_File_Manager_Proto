@@ -1,5 +1,7 @@
 def insert
-  Person.create( :first_name => "first_name" , :last_name => "last_name", :file => File.binread("#{Rails.root}/public/slack.png"))
+  10.times do
+    Person.create( :first_name => "first_name" , :last_name => "last_name", :file => File.binread("#{Rails.root}/public/slack.png"))
+  end
 end
 
 def retrieve_all
