@@ -1,6 +1,7 @@
 class Person < ActiveRecord::Base
    attr_accessible :first_name, :last_name, :file, :file_id, :file_type
    # before_initialize :init
+   after_destroy :destroy_file
 
   def file
     @file ||= Fichier.find(self.file_id) if self.file_id
@@ -17,10 +18,15 @@ class Person < ActiveRecord::Base
     file_content.save
   end
 
-  # private
+  private
 
   # def init
   #   self.file_id = Fichier.new().id
   # end
+  #
+  def destroy_file
+    file_content = Fichier.find(self.file_id) if self.file_id
+    file_content.destroy
+  end
 
 end
