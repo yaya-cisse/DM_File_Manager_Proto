@@ -3,7 +3,7 @@ class Person < ActiveRecord::Base
    # before_initialize :init
 
   def file
-    @file ||= Fichier.find(self.file_id)
+    @file ||= Fichier.find(self.file_id) if self.file_id
   end
 
   def file=(binary)
