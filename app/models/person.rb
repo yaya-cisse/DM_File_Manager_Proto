@@ -25,8 +25,10 @@ class Person < ActiveRecord::Base
   # end
   #
   def destroy_file
-    file_content = Fichier.find(self.file_id) if self.file_id
-    file_content.destroy
+    if self.file_id
+      file_content = Fichier.find(self.file_id)
+      file_content.destroy
+    end
   end
 
 end
