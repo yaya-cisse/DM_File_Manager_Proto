@@ -7,19 +7,19 @@ end
 
 def insert_with_medium_files
   100.times do |i|
-    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :file_type => "medium", :file => File.binread("#{Rails.root}/public/image.png"))
+    Person.create( :first_name => "first_name_#{i+400}" , :last_name => "last_name_#{i+400}", :file_type => "medium", :file => File.binread("#{Rails.root}/public/image.png"))
   end
 end
 
 def insert_with_small_files
   4500.times do |i|
-    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :file_type => "small", :file => File.binread("#{Rails.root}/public/slack.png"))
+    Person.create( :first_name => "first_name_#{i+500}" , :last_name => "last_name_#{i+500}", :file_type => "small", :file => File.binread("#{Rails.root}/public/slack.png"))
   end
 end
 
 def insert_without_files
   995000.times do |i|
-    Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}")
+    Person.create( :first_name => "first_name_#{i+4500}" , :last_name => "last_name_#{i+4500}")
   end
 end
 
