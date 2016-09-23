@@ -12,10 +12,17 @@ def retrieve_a_file
   Person.first.image
 end
 
+
+def destroy_all
+  Person.destroy_all
+  Fichier.destroy_all
+end
+
 # File.write("#{Rails.root}/public/result.txt", "userCPU   systemCPU   total    elapsedRealTime")
 File.open("#{Rails.root}/public/result.txt", 'w') do |file|
   file.write("  userCPU    systemCPU   total    elapsedRealTime")
   file.write(base = Benchmark.measure { insert })
   file.write(base = Benchmark.measure { retrieve_all })
+  file.write(base = Benchmark.measure { destroy_all })
   file.close
 end
