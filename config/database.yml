@@ -28,7 +28,7 @@
 
 default: &default
   adapter:  mysql2
-  database: prototype_db
+  database: prototypes_db
   username: root
   host:  172.17.0.2 #127.0.0.1
   password: mditest
