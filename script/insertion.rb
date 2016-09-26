@@ -17,19 +17,19 @@ def insert_with_small_files
   end
 end
 
-def insert_without_files
-  995000.times do |i|
-    Person.create( :first_name => "first_name_#{i+4500}" , :last_name => "last_name_#{i+4500}")
-  end
-end
+# def insert_without_files
+#   995000.times do |i|
+#     Person.create( :first_name => "first_name_#{i+4500}" , :last_name => "last_name_#{i+4500}")
+#   end
+# end
 
 def get_all_records
   persons = Person.all
 end
 
-def get_records_without_files
-  persons = Person.where(:file => nil)
-end
+# def get_records_without_files
+#   persons = Person.where(:file => nil)
+# end
 
 def get_records_with_small_files
   persons = Person.where(file_type: "small")
@@ -62,9 +62,7 @@ File.open("#{Rails.root}/public/result.txt", 'w') do |file|
   file.write(base = Benchmark.measure { insert_with_large_files })
   file.write(base = Benchmark.measure { insert_with_medium_files })
   file.write(base = Benchmark.measure { insert_with_small_files })
-  file.write(base = Benchmark.measure { insert_without_files })
   file.write(base = Benchmark.measure { get_all_records })
-  file.write(base = Benchmark.measure { get_records_without_files })
   file.write(base = Benchmark.measure { get_records_with_small_files })
   file.write(base = Benchmark.measure { get_records_with_medium_files })
   file.write(base = Benchmark.measure { get_records_with_large_files })
