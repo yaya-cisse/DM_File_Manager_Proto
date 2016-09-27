@@ -59,6 +59,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.12.1)
+    mysql2 (0.3.21)
     polyglot (0.3.5)
     power_assert (0.3.0)
     rack (1.4.7)
@@ -118,6 +119,7 @@ DEPENDENCIES
   couchbase
   couchbase-model
   jquery-rails
+  mysql2 (~> 0.3.20)
   rails (= 3.2.22.1)
   ruby-prof
   sass-rails (~> 3.2.3)
