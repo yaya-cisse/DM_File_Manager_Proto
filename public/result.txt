@@ -1,3 +1,1 @@
-  userCPU    systemCPU   total    elapsedRealTime  0.090000   0.010000   0.100000 (  1.286690)
-  0.010000   0.000000   0.010000 (  0.003037)
-  0.040000   0.010000   0.050000 (  1.013729)
+  userCPU    systemCPU   total    elapsedRealTime
