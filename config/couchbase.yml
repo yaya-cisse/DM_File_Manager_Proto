@@ -1,5 +1,5 @@
 common: &common
-  hostname: 172.17.0.4
+  hostname: 172.17.0.3
   port: 8091
   username:
   password:
