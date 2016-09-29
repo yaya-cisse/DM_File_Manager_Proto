@@ -10,9 +10,9 @@ class Person < ActiveRecord::Base
   def file=(binary)
     unless self.file_id
       file_content = Fichier.create()
-      self.file_id = file_content.id#.to_s
+      self.file_id = file_content.id.to_s
     else
-      file_content = Fichier.find(self.file_id)
+      file_content = Fichier.find_by_id(self.file_id)
     end
     file_content.content = Couchbase::Transcoder::Marshal.dump(binary, 0x1000)
     file_content.save
