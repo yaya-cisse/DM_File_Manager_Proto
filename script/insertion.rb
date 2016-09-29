@@ -72,7 +72,6 @@ end
 
 File.open("#{Rails.root}/public/result.txt", 'w') do |file|
   file.write("  userCPU    systemCPU   total    elapsedRealTime")
-  c = Couchbase.connect
   # file.write(base = Benchmark.measure { insert_with_large_files })
   file.write(base = Benchmark.measure { insert_with_medium_files })
   file.write(base = Benchmark.measure { insert_with_small_files })
