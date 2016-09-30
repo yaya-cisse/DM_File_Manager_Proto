@@ -8,6 +8,9 @@ gem 'rails', '3.2.22.1'
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 
+gem 'mongoid'
+gem 'bson_ext'
+
 gem 'couchbase'
 gem 'couchbase-model'
 
