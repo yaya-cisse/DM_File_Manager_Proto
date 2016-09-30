@@ -76,16 +76,20 @@ end
 # puts base = Benchmark.measure { destroy_all }
 
 #File.open("#{Rails.root}/public/result.txt", 'w') do |file|
+
+[MongoMan,MysqlMan,CouchbaseMan].each do |name|
+  Person.class.send(:include,  name)
   puts "  userCPU    systemCPU   total    elapsedRealTime"
+end
   # puts(base = Benchmark.measure { insert_with_large_files }
-  puts base = Benchmark.measure { insert_with_medium_files }
-  puts base = Benchmark.measure { insert_with_small_files }
-  puts base = Benchmark.measure { get_all_records }
-  puts base = Benchmark.measure { get_records_with_small_files }
-  puts base = Benchmark.measure { get_records_with_medium_files }
-  # puts(base = Benchmark.measure { get_records_with_large_files }
-  puts base = Benchmark.measure { get_all_small_files }
-  puts base = Benchmark.measure { get_all_medium_files }
-#  puts(base = Benchmark.measure { destroy_all }
-#  file.close
+#   puts base = Benchmark.measure { insert_with_medium_files }
+#   puts base = Benchmark.measure { insert_with_small_files }
+#   puts base = Benchmark.measure { get_all_records }
+#   puts base = Benchmark.measure { get_records_with_small_files }
+#   puts base = Benchmark.measure { get_records_with_medium_files }
+#   # puts(base = Benchmark.measure { get_records_with_large_files }
+#   puts base = Benchmark.measure { get_all_small_files }
+#   puts base = Benchmark.measure { get_all_medium_files }
+# #  puts(base = Benchmark.measure { destroy_all }
+# #  file.close
 #end
