@@ -1,16 +1,28 @@
 class LocalStorage < BaseProvider
+  @@file_name = nil
 
-  def self.get_file(name)
-    @my_file ||= File.binread(name)
+  def self.file_name
+    @@file_name
   end
 
-  def self.set_file(binary, name)
+  def self.get_file(file_id)
+    @my_file ||= File.binread(file_id)
+  end
+
+  def self.set_file(binary, file_id)
     @my_file = binary
-    File.open(name,"wb"){|file| file.write(@my_file)}
-    # @name = name
+    @file_name = file_id
+
+    file_id
   end
 
   def self.save_file
-    File.open(@name,"wb"){|file| file.write(@my_file)}
+    File.open(@file_name,"wb"){|file| file.write(@my_file)}
+  end
+
+  def self.destroy_file(file_id)
+    if file_id
+      File.delete(file_id)
+    end
   end
 end
