@@ -1,15 +1,10 @@
 class LocalStorage < BaseProvider
-  @@file_name = nil
-
-  def self.file_name
-    @@file_name
-  end
 
   def self.get_file(file_id)
     @my_file ||= File.binread(file_id)
   end
 
-  def self.set_file(binary, file_id)
+  def self.set_file(file_id, binary)
     @my_file = binary
     @file_name = file_id
 

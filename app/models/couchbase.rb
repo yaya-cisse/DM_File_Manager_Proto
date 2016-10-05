@@ -3,23 +3,28 @@ class CouchbaseManager
   include Singleton
 
   def connection
-    @conn ||= Couchbase.connect(:hostname => "localhost", :port => 8091,:password => 'test', :bucket => "proto_database")
+    @conn ||= Couchbase.connect(:hostname => "172.17.0.4", :port => 8091, :bucket => "proto_database")
   end
 
-  def get_file
+  def self.get_file(file_id)
     @my_file ||= (
-        CouchbaseManager.instance.connection.get("PERSON:#{self.first_name}")
+        CouchbaseManager.instance.connection.get(file_id)
     )
   end
 
-  def set_file=(binary)
+  def self.set_file(file_id, binary)
     @my_file = binary
-    CouchbaseManager.instance.connection.set("PERSON:#{self.first_name}", @my_file, :format => :plain)
+    @file_key = file_id
+    file_id
   end
 
-  private
+  def self.save_file
+    CouchbaseManager.instance.connection.set(@file_key, @my_file, :format => :plain)
+  end
 
-  def save_file
-    CouchbaseManager.instance.connection.set("PERSON:#{self.first_name}", @my_file, :format => :plain)
+  def self.destroy_file(id)
+    if id
+      CouchbaseManager.instance.connection.delete(id)
+    end
   end
 end
