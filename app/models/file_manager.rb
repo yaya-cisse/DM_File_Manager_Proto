@@ -23,7 +23,7 @@ module FileManager
   end
 
   def set_file=(binary)
-    self.file_id = Person.provider.set_file(binary, self.file_id)
+    self.file_id = Person.provider.set_file(self.file_id, binary)
   end
 
 
