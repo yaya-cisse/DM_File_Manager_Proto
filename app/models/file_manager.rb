@@ -28,7 +28,6 @@ module FileManager
 
 
   private
-
   def save_file
     Person.provider.save_file
   end
@@ -36,5 +35,4 @@ module FileManager
   def destroy_file
     Person.provider.destroy_file(self.file_id)
   end
-
 end

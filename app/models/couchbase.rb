@@ -1,4 +1,5 @@
 require 'singleton'
+
 class CouchbaseManager
   include Singleton
 

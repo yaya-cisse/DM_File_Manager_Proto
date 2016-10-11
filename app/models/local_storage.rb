@@ -20,4 +20,5 @@ class LocalStorage < BaseProvider
       File.delete(file_id)
     end
   end
+
 end

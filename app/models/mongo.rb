@@ -30,4 +30,5 @@ class MongoManager
     include Mongoid::Document
     field :content, type: Moped::BSON::Binary
   end
+
 end

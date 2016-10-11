@@ -85,6 +85,7 @@ end
   puts base = Benchmark.measure { get_all_small_files }
   puts base = Benchmark.measure { get_all_medium_files }
 end
+
   # puts(base = Benchmark.measure { insert_with_large_files }
 #   puts base = Benchmark.measure { insert_with_medium_files }
 #   puts base = Benchmark.measure { insert_with_small_files }

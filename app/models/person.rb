@@ -3,5 +3,4 @@ class Person < ActiveRecord::Base
 
   include FileManager
   provide LocalStorage
-
 end
