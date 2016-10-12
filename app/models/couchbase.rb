@@ -1,4 +1,5 @@
 require 'singleton'
+require 'securerandom'
 
 class CouchbaseManager
   include Singleton
@@ -15,6 +16,7 @@ class CouchbaseManager
 
   def self.set_file(file_id, binary)
     @my_file = binary
+    file_id = SecureRandom.uuid
     @file_key = file_id
     file_id
   end

@@ -8,7 +8,7 @@
 def insert_with_medium_files
   base = Time.now.to_i
   data  = File.binread("#{Rails.root}/public/image.png")
-  (base..base + 1000).each do |i|
+  (base..base + 100).each do |i|
     Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :file_type => "medium", :set_file => data)
   end
 end
@@ -16,7 +16,7 @@ end
 def insert_with_small_files
   base = Time.now.to_i
   data = File.binread("#{Rails.root}/public/slack.png")
-  (base..base + 1000).each do |i|
+  (base..base + 100).each do |i|
     Person.create( :first_name => "first_name_#{i}" , :last_name => "last_name_#{i}", :file_type => "small", :set_file => data)
   end
 end
@@ -77,8 +77,9 @@ end
 
 #File.open("#{Rails.root}/public/result.txt", 'w') do |file|
 
-[MysqlManager].each do |name|
+[MysqlManager, MongoManager, CouchbaseManager].each do |name|
   Person.provide(name)
+  puts "=====================#{name}====================="
   puts "  userCPU    systemCPU   total    elapsedRealTime"
   puts base = Benchmark.measure { insert_with_medium_files }
   puts base = Benchmark.measure { insert_with_small_files }
