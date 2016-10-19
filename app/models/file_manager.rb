@@ -1,13 +1,15 @@
 module FileManager
   extend ActiveSupport::Concern
+  FileManager.extend AfterDo
+
+  # FileManager.after :set_file do save_file end
 
   included do
-    before_save :save_file
-    attr_accessible :file_id, :file_name, :set_file
+    FileManager.after :set_file= do :save_file end
+    attr_accessible :file_id, :file_name, :file_provider, :set_file
     after_destroy :destroy_file
   end
 
-  @@provider = nil
 
   module ClassMethods
     def provide(provider)
@@ -19,20 +21,21 @@ module FileManager
   end
 
   def get_file
-    Person.provider.get_file(self.file_id)
+    file_provider.constantize.get_file(self.file_id)
   end
 
   def set_file=(binary)
-    self.file_id = Person.provider.set_file(self.file_id, binary)
+    self.file_provider = Person.provider.to_s
+    self.file_id = file_provider.constantize.set_file(self.file_id, binary)
   end
 
 
   private
   def save_file
-    Person.provider.save_file
+    file_provider.constantize.save_file
   end
 
   def destroy_file
-    Person.provider.destroy_file(self.file_id)
+    file_provider.constantize.destroy_file(self.file_id)
   end
 end

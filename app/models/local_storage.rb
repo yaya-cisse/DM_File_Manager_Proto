@@ -17,7 +17,7 @@ class LocalStorage < BaseProvider
 
   def self.destroy_file(file_id)
     if file_id
-      File.delete(file_id)
+      File.delete(file_id) if File.exist?(file_id)
     end
   end
 

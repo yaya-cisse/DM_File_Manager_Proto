@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.22.1)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    after_do (0.4.0)
     arel (3.0.3)
     bson (1.12.5)
     bson_ext (1.12.5)
@@ -125,6 +126,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  after_do
   bson_ext
   coffee-rails (~> 3.2.1)
   couchbase

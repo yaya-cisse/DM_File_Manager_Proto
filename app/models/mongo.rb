@@ -1,15 +1,15 @@
 class MongoManager
 
   def self.get_file(file_id)
-    @my_file ||= Fichier.find(file_id).content if file_id
+    @my_file ||= MongoManager::Fichier.find(file_id).content if file_id
   end
 
   def self.set_file(file_id, binary)
     unless file_id
-      @file = Fichier.create()
+      @file = MongoManager::Fichier.create()
       file_id = @file.id.to_s
     else
-      @file = Fichier.find(file_id)
+      @file = MongoManager::Fichier.find(file_id)
     end
     @file.content = Moped::BSON::Binary.new(:generic,binary)
     file_id
@@ -21,7 +21,7 @@ class MongoManager
 
   def self.destroy_file(id)
     if id
-      file = Fichier.find(id)
+      file = MongoManager::Fichier.find(id)
       file.destroy
     end
   end
