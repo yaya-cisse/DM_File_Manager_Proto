@@ -7,6 +7,9 @@ gem 'rails', '3.2.22.1'
 
 gem 'after_do'
 
+# gem for glusterfs
+gem 'libgfapi-ruby'
+
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 
