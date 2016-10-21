@@ -10,6 +10,12 @@ gem 'after_do'
 # gem for glusterfs
 gem 'libgfapi-ruby'
 
+# # gem for ceph
+# gem 'ceph-ruby'
+
+# # gem for mogilefs
+# gem 'mogilefs-client', '~> 3.10'
+
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 

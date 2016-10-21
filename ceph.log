@@ -1,0 +1,32 @@
+[ceph_deploy.conf][DEBUG ] found configuration file at: /home/abdelhafiz/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.20): /usr/bin/ceph-deploy new localhost
+[ceph_deploy.new][DEBUG ] Creating new cluster named ceph
+[ceph_deploy.new][INFO  ] making sure passwordless SSH succeeds
+[localhost][DEBUG ] connected to host: abdelhafiz-Ubnt 
+[localhost][INFO  ] Running command: ssh -CT -o BatchMode=yes localhost
+[ceph_deploy][ERROR ] RuntimeError: connecting to host: localhost resulted in errors: HostNotFound localhost
+
+[ceph_deploy.conf][DEBUG ] found configuration file at: /home/abdelhafiz/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.20): /usr/bin/ceph-deploy new localhost
+[ceph_deploy.new][DEBUG ] Creating new cluster named ceph
+[ceph_deploy.new][INFO  ] making sure passwordless SSH succeeds
+[localhost][DEBUG ] connected to host: abdelhafiz-Ubnt 
+[localhost][INFO  ] Running command: ssh -CT -o BatchMode=yes localhost
+[ceph_deploy][ERROR ] RuntimeError: connecting to host: localhost resulted in errors: HostNotFound localhost
+
+[ceph_deploy.conf][DEBUG ] found configuration file at: /home/abdelhafiz/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.20): /usr/bin/ceph-deploy new localhost
+[ceph_deploy.new][DEBUG ] Creating new cluster named ceph
+[ceph_deploy.new][INFO  ] making sure passwordless SSH succeeds
+[localhost][DEBUG ] connected to host: abdelhafiz-Ubnt 
+[localhost][INFO  ] Running command: ssh -CT -o BatchMode=yes localhost
+[ceph_deploy][ERROR ] RuntimeError: connecting to host: localhost resulted in errors: HostNotFound localhost
+
+[ceph_deploy.conf][DEBUG ] found configuration file at: /home/abdelhafiz/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.20): /usr/bin/ceph-deploy new localhost
+[ceph_deploy.new][DEBUG ] Creating new cluster named ceph
+[ceph_deploy.new][INFO  ] making sure passwordless SSH succeeds
+[localhost][DEBUG ] connected to host: abdelhafiz-Ubnt 
+[localhost][INFO  ] Running command: ssh -CT -o BatchMode=yes localhost
+[ceph_deploy][ERROR ] RuntimeError: connecting to host: localhost resulted in errors: HostNotFound localhost
+
