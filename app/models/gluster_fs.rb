@@ -9,13 +9,14 @@ class GlusterfsManager
   end
 
   def self.get_file(file_id)
-    file = GlusterFS::File.new(@volume, @dir.path+'/'+file_id)
-    @my_file ||= file.read
+    file = GlusterFS::File.new(@volume, file_id)
+    file.read
   end
 
   def self.set_file(file_id, binary)
-    @my_file = binary
-    @file = GlusterFS::File.new(@volume, @dir.path+'/'+file_id)
+    file_id = @dir.path+'/'+file_id
+    @file = GlusterFS::File.new(@volume, file_id)
+    @file.write(binary)
     file_id
   end
 
@@ -25,7 +26,7 @@ class GlusterfsManager
 
   def self.destroy_file(file_id)
     if file_id
-      @volume.delete_file(@dir.path+'/'+file_id)
+      @volume.delete_file(file_id)
     end
   end
 

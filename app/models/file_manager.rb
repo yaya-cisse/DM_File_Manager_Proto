@@ -5,8 +5,8 @@ module FileManager
   # FileManager.after :set_file do save_file end
 
   included do
-    FileManager.after :set_file= do :save_file end
-    attr_accessible :file_id, :file_name, :file_provider, :set_file
+    # FileManager.after :set_file= do :save_file end
+    attr_accessible :file_id, :file_type, :file_provider, :set_file
     after_destroy :destroy_file
   end
 
