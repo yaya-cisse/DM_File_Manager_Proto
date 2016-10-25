@@ -21,7 +21,6 @@ class GlusterfsManager
   end
 
   def self.save_file
-    size = @file.write(@my_file)
   end
 
   def self.destroy_file(file_id)

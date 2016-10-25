@@ -2,10 +2,8 @@ module FileManager
   extend ActiveSupport::Concern
   FileManager.extend AfterDo
 
-  # FileManager.after :set_file do save_file end
-
   included do
-    # FileManager.after :set_file= do :save_file end
+    FileManager.after :set_file= do :save_file end
     attr_accessible :file_id, :file_type, :file_provider, :set_file
     after_destroy :destroy_file
   end
