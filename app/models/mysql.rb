@@ -1,4 +1,4 @@
-class MysqlManager
+class MysqlManager < BaseProvider
 
   def self.get_file(file_id)
     @my_file ||= MysqlManager::Fichier.find(file_id).content if file_id

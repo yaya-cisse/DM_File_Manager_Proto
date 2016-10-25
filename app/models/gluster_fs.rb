@@ -1,6 +1,6 @@
 require 'glusterfs'
 
-class GlusterfsManager
+class GlusterfsManager < BaseProvider
   def self.initialize(volume_name, host_name, directory)
     @volume = GlusterFS::Volume.new(volume_name)
     @volume.mount(host_name)
@@ -18,9 +18,6 @@ class GlusterfsManager
     @file = GlusterFS::File.new(@volume, file_id)
     @file.write(binary)
     file_id
-  end
-
-  def self.save_file
   end
 
   def self.destroy_file(file_id)

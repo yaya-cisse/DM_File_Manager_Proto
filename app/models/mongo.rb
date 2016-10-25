@@ -1,4 +1,4 @@
-class MongoManager
+class MongoManager < BaseProvider
 
   def self.get_file(file_id)
     @my_file ||= MongoManager::Fichier.find(file_id).content if file_id

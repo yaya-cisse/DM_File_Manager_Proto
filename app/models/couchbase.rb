@@ -1,7 +1,7 @@
 require 'singleton'
 require 'securerandom'
 
-class CouchbaseManager
+class CouchbaseManager < BaseProvider
   include Singleton
 
   def connection
